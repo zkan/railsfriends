@@ -4,10 +4,12 @@
 
 <div id="friends">
   <% @friends.each do |friend| %>
-    <%= render friend %>
+    <% if friend.user == current_user %>
+      <%= render friend %>
     <p>
       <%= link_to "Show this friend", friend %>
     </p>
+    <% end %>
   <% end %>
 </div>
 
